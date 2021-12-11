@@ -5,6 +5,5 @@
 @endsection
 
 @section('container')
-<h1>TEST HALAMAN HOME</h1>
+<h1>TEST HALAMAN INDEX</h1>
 @endsection
-
