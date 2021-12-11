@@ -17,6 +17,11 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+
+    protected $guarded = [
+        'id'
+    ];
+
     protected $fillable = [
         'name',
         'email',
@@ -41,4 +46,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 1 USER (ADMIN) BISA PUNYA BANYAK POST
+    public function posts() {
+        
+        //return $this->hasMany();
+    }
 }

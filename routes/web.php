@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::post('/login', [LoginController::class, 'Masuk']);
 
 // LOGOUT ROUTE
 Route::post('/logout', [LoginController::class, 'Keluar']);
+
+// DASHBOARD ROUTE
+Route::get('/dashboard', [DashboardController::class, 'Index'])->middleware('auth');
+
+// DASHBOARD ROUTE (KHUSUS ADMIN)
+//Route::get('/dashboard/data-barang', [DataBarangController::class, 'Index'])->except('show')->middleware('admin');
