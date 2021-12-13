@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\User;
@@ -27,17 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // untuk page
         Paginator::useBootstrap();
-        
-        // untuk gate (admin)
         Gate::define('admin', function(User $user) {
            return $user->is_admin;
-        });
-
-        // untuk notasi currency 
-        Blade::directive('money', function ($amount) {
-            return "<?php echo 'Rp' . number_format($amount, 2); ?>";
         });
     }
 }
