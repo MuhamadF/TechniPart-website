@@ -3,7 +3,6 @@
 
 @section('container')
         <div class="container">
-        {{-- Slideshow --}}
         <div id="carouselExampleCaptions" class="carousel slide mb-2" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

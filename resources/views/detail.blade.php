@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @include('partials.navbar')
 
+{{-- coba --}}
+
 @section('container')
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center">
