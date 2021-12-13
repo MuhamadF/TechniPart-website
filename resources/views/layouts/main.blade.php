@@ -20,6 +20,7 @@
     </head>
     <body>
     @yield('navbar')
+    @yield('navbar2')
 
     <div class="container mt-4">
         @yield('container')

@@ -19,7 +19,7 @@ class BelanjaController extends Controller
         if(request('search')) {
             $title = ' di pencarian ' . request('search');
         }
-        return view('belanja.index', [
+        return view('home', [
                 'title' => 'Semua Produk' . $title,
                 'active' => 'belanja',
                 'barang' => Barang::latest()->filter(request(['search', 'category']))->get(),
@@ -28,10 +28,11 @@ class BelanjaController extends Controller
     }
 
     public function show(Barang $barang) {
-        return view('barang', [
+        return view('detail', [
             'nama_barang' => 'Barang',
             'active' => 'Belanja',
-            'barang' => $barang
+            'barang' => $barang,
+            'category' => Category::All()
         ]);
     }
 }

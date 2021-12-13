@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @include('partials.navbar')
-@include('belanja.layouts.navbar')
 
 @section('container')
 <div class="container">
