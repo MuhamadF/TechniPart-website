@@ -18,10 +18,10 @@ class IsAdmin
     {
         // JIKA HAK AKSES BUKAN ADMIN, THROW 403 FORBIDDEN
 
-        if(!auth()->check || !auth()->user()->is_admin) {
+        if(!auth()->check() || !auth()->user()->is_admin) {
             abort(403);
         }
 
-        return $next($requsst);
+         return $next($request);
     }
 }
