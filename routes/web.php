@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BelanjaController;
-use App\Http\Controllers\DashboardBarangController;
-use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +17,12 @@ use App\Http\Controllers\Controller;
 */
 
 // HOME ROUTE
-Route::get('/', [BelanjaController::class, 'Index']);
+Route::get('/', function () {
+    return view('home');
+});
+
+// BELANJA ROUTE
+Route::get('/belanja', [BelanjaController::class, 'Index']);
 
 // LOGIN ROUTE
 Route::get('/login', [LoginController::class, 'Index'])->name('login')->middleware('guest');
@@ -30,9 +33,3 @@ Route::post('/logout', [LoginController::class, 'Keluar']);
 
 // DASHBOARD ROUTE
 Route::get('/dashboard', [DashboardController::class, 'Index'])->middleware('auth');
-
-// DASHBOARD ADMIN ROUTE
-Route::resource('/dashboard/barang', DashboardBarangController::class)->middleware('admin');
-
-// SHOW ROUTE
-Route::get('detail/{barang:slug}', [BelanjaController::class, 'show']);

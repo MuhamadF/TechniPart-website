@@ -55,7 +55,6 @@ class DatabaseSeeder extends Seeder
             'socket' => 'LGA1151',
             'ram_support' => 'DDR3-1600',
             'category_id' => 1,
-            'stok' => 50,
             'user_id' => 1
         ]);
 
@@ -67,7 +66,6 @@ class DatabaseSeeder extends Seeder
             'socket' => 'LGA1151',
             'ram_support' => 'DDR3-1600',
             'category_id' => 2,
-            'stok' => 50,
             'user_id' => 1
         ]);
     }
