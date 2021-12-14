@@ -3,6 +3,13 @@
 @section('container')
     <h1 class="mt-4 mb-2">Data Barang</h1>
     <hr class="mb-4">
+
+    @if(session()->has('success'))
+      <div class="alert alert-success col-lg-8" role="alert">
+        {{session('success')}}
+      </div>
+    @endif
+
     <div class="table-responsive">
           <a href="/dashboard/barang/tambah" class="btn btn-primary mb-3"><i class="bi bi-bag-plus"></i> Tambah Barang</a>
         <table class="table table-striped table-sm">
