@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class DashboardBarangController extends Controller
@@ -37,7 +38,21 @@ class DashboardBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'nama_barang' => 'required|max:255',
+            'category_id' => 'required',
+            'desc' => 'required',
+            'harga' => 'required',
+            'socket' => 'nullable',
+            'ram_support' => 'nullable',
+            'stok' => 'nullable'
+        ];
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Barang::create($validatedData);
+
+        return redirect('/dashboard/barang')->with('success', 'Data barang berhasil diupdate!');
     }
 
     /**
@@ -59,7 +74,10 @@ class DashboardBarangController extends Controller
      */
     public function edit(Barang $barang)
     {
-        //
+        return view('dashboard.barang.edit', [
+            'barang' => $barang,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -71,7 +89,28 @@ class DashboardBarangController extends Controller
      */
     public function update(Request $request, Barang $barang)
     {
-        //
+        $rules = [
+            'nama_barang' => 'required|max:255',
+            'category_id' => 'required',
+            'desc' => 'required',
+            'harga' => 'required',
+            'socket' => 'nullable',
+            'ram_support' => 'nullable',
+            'stok' => 'nullable'
+
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        if($request->slug != $barang->slug) {
+            $rules['slug'] = 'required|unique:barangs';
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Barang::where('id', $barang->id)->update($validatedData);
+
+        return redirect('/dashboard/barang')->with('success', 'Data barang berhasil diupdate!');
     }
 
     /**
@@ -83,5 +122,10 @@ class DashboardBarangController extends Controller
     public function destroy(Barang $barang)
     {
         //
+    }
+
+    public function checkSlug(Request $request) {
+        $slug = SlugService::createSlug(Barang::class, 'slug', $request->nama_barang);
+        return response()->json(['slug' => $slug]);
     }
 }
