@@ -71,17 +71,50 @@
 </div>
 
 {{-- footer --}}
-
-{{-- <div class="row mt-4 no-gutters">
-    <div class="col-md-2 bg-light">
-        <h5>Contact Us</h5>
-        <i class="fab fa-facebook-square"></i>
-        <br>
-        <i class="fab fa-instagram"></i>
-        <br>
-        <i class="fas fa-envelope"></i>
+<footer class="footer">
+  <div class="ft">
+      <div class="row">
+          <div class="footer-col">
+               <h4>company</h4>
+               <ul>
+                  <li><a href="...">about us</a></li>
+                  <li><a href="...">our services</a></li>
+                  <li><a href="...">privacy policy</a></li>
+                  <li><a href="...">affiliate program</a></li>
+               </ul>
+          </div>
+              <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                  <li><a href="...">FAQ</a></li>
+                  <li><a href="...">shipping</a></li>
+                  <li><a href="...">returns</a></li>
+                  <li><a href="...">order status</a></li>
+                  <li><a href="...">payments options</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>online shop</h4>
+                  <ul>
+                      <li><a href="...">processor</a></li>
+                      <li><a href="...">ram</a></li>
+                      <li><a href="...">motherboard</a></li>
+                      <li><a href="...">cpu</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                <h4>follow us</h4>
+                  <div class="social-links">
+                    <a href="..."><i class="fab fa-facebook-f"></i></a><br>
+                    <a href="..."><i class="fab fa-twitter"></i></a><br>
+                    <a href="..."><i class="fab fa-instagram"></i></a>
+                  </div>
+             </div>
+      </div>
     </div>
-</div> --}}
+</footer>
+
+{{-- Akhir footer --}}
 @endsection
 </body>
 </html>
