@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardBarangController extends Controller
 {
@@ -107,11 +108,19 @@ class DashboardBarangController extends Controller
             'harga' => 'required',
             'socket' => 'nullable',
             'ram_support' => 'nullable',
-            'stok' => 'nullable'
+            'stok' => 'nullable',
+            'image' => 'image|file|max:1024'
 
         ];
 
         $validatedData = $request->validate($rules);
+
+        if($request->file('image')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
         if($request->slug != $barang->slug) {
             $rules['slug'] = 'required|unique:barangs';
@@ -132,9 +141,10 @@ class DashboardBarangController extends Controller
      */
     public function destroy(Barang $barang)
     {
-        // if($barang->image) {
-        //     Storage::delete($post->image);
-        // }
+
+        if($barang->image) {
+            Storage::delete($barang->image);
+        }
 
          Barang::destroy($barang->id);
 
