@@ -12,21 +12,21 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/slide/slide1.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:50vh" alt="">
+              <img src="img/slide/slide1.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="img/slide/slide2.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:50vh" alt="">
+              <img src="img/slide/slide2.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="img/slide/slide3.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:50vh" alt="">
+              <img src="img/slide/slide3.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -84,21 +84,22 @@
                </ul>
           </div>
               <div class="footer-col">
-                <h4>get help</h4>
+                <h4>our team</h4>
                 <ul>
-                  <li><a href="...">FAQ</a></li>
-                  <li><a href="...">shipping</a></li>
-                  <li><a href="...">returns</a></li>
-                  <li><a href="...">order status</a></li>
-                  <li><a href="...">payments options</a></li>
+                  <li><a href="...">Muhamad Fawwazt S</a></li>
+                  <li><a href="...">Rizky Angga Saputra</a></li>
+                  <li><a href="...">rifqi muliawan</a></li>
+                  <li><a href="...">devis suparlan</a></li>
+                  <li><a href="...">nelli Marliana</a></li>
                 </ul>
               </div>
               <div class="footer-col">
                   <h4>online shop</h4>
                   <ul>
                       <li><a href="...">processor</a></li>
-                      <li><a href="...">ram</a></li>
                       <li><a href="...">motherboard</a></li>
+                      <li><a href="...">Accessories</a></li>
+                      <li><a href="...">ram</a></li>
                       <li><a href="...">cpu</a></li>
                   </ul>
               </div>
@@ -109,6 +110,10 @@
                     <a href="..."><i class="fab fa-twitter"></i></a><br>
                     <a href="..."><i class="fab fa-instagram"></i></a>
                   </div>
+             </div>
+             <div class="container px-4 px-lg-5 mt-1">
+               <hr class="text-white">
+               <p class="text-white text-center">Copyright &copy; TechniPart Team 2021</p>
              </div>
       </div>
     </div>

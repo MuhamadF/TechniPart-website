@@ -15,7 +15,7 @@ ul{
 
 .footer{
    background-color: #24262b;
-   padding: 70px 0;
+   padding: 20px 5px;
 }
 
 .footer-col{
@@ -33,12 +33,12 @@ ul{
 .footer-col h4::before{
    content: '';
    position: absolute;
-   Left:0;
+   Left: 5px;
    bottom: -10px;
    background-color: #e91e63;
    height: 2px;
    box-sizing: border-box;
-   width: 50px;
+   width: 70px;
 }
 .footer-col ul li:not(:last-child){
    margin-bottom: 10px;
