@@ -51,7 +51,12 @@
           <div class="col-sm-3 mb-2">
           <a href="/detail/{{$barangs->slug}}" class="text-decoration-none text-dark">
           <div class="card" style="width: 12rem;">
-          <img src="..." class="card-img-top" alt="{{$barangs->image}}">
+                @if ($barangs->image)
+                    <img src="{{ asset('storage/' . $barangs->image) }}" alt="{{ $barangs->category->name }}" class="img-fluid mt-3">
+                @else
+                  <img src="..." class="card-img-top" alt="{{$barangs->image}}">
+                @endif
+          
           <div class="card-body">
               <p class="card-text mb-1">{{$barangs->nama_barang}}</p>
               <h5 class="card-title">Rp. {{$barangs->harga}},-</h5>

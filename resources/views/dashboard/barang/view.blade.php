@@ -15,7 +15,11 @@
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center">
             <div class="col-sm-4">
-                <img src="..." alt="..." width="320px" class="mt-4 mb-4">
+                @if ($barang->image)
+                    <img src="{{ asset('storage/' . $barang->image) }}" alt="{{ $barang->category->name }}" class="img-fluid mt-3">
+                @else
+                    <img src="..." alt="..." width="320px" class="mt-4 mb-4">
+                @endif
             </div>
             <div class="col-md-5">
                 <div class="card border-white mb-3" style="max-width: 30rem;">

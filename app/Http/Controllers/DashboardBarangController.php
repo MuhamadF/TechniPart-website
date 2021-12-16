@@ -39,7 +39,7 @@ class DashboardBarangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $validatedData = $request->validate([
             'nama_barang' => 'required|max:255',
             'category_id' => 'required',
@@ -48,8 +48,13 @@ class DashboardBarangController extends Controller
             'harga' => 'required',
             'socket' => 'nullable',
             'ram_support' => 'nullable',
-            'stok' => 'nullable'
+            'stok' => 'nullable',
+            'image' => 'image|file|max:1024'
         ]);
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
          $validatedData['user_id'] = auth()->user()->id;
 
