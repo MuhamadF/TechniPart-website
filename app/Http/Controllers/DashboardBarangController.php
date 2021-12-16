@@ -63,7 +63,10 @@ class DashboardBarangController extends Controller
      */
     public function show(Barang $barang)
     {
-        //
+        return view('dashboard.barang.view', [
+            'barang' => $barang,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -121,7 +124,13 @@ class DashboardBarangController extends Controller
      */
     public function destroy(Barang $barang)
     {
-        //
+        // if($barang->image) {
+        //     Storage::delete($post->image);
+        // }
+
+        Barang::destroy($barang->id);
+
+        return redirect('/dashboard/barang')->with('success', 'Barang Berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {
