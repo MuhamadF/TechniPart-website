@@ -75,8 +75,7 @@
     </div>
 </div>
 
-{{-- footer --}}
-<footer class="footer">
+<footer class="footer mt-5">
   <div class="ft">
       <div class="row">
           <div class="footer-col">
@@ -93,19 +92,17 @@
                 <ul>
                   <li><a href="...">Muhamad Fawwazt S</a></li>
                   <li><a href="...">Rizky Angga Saputra</a></li>
-                  <li><a href="...">rifqi muliawan</a></li>
-                  <li><a href="...">devis suparlan</a></li>
-                  <li><a href="...">nelli Marliana</a></li>
+                  <li><a href="...">Rifqi Muliawan</a></li>
+                  <li><a href="...">Devis Suparlan</a></li>
+                  <li><a href="...">Nelli Marliana</a></li>
                 </ul>
               </div>
               <div class="footer-col">
-                  <h4>online shop</h4>
+                  <h4>Kategori</h4>
                   <ul>
-                      <li><a href="...">processor</a></li>
-                      <li><a href="...">motherboard</a></li>
-                      <li><a href="...">Accessories</a></li>
-                      <li><a href="...">ram</a></li>
-                      <li><a href="...">cpu</a></li>
+                    @foreach($category as $categories)
+                        <li><a href="?category={{$categories->slug}}">{{$categories->nama}}</a></li>
+                    @endforeach
                   </ul>
               </div>
               <div class="footer-col">
@@ -124,7 +121,6 @@
     </div>
 </footer>
 
-{{-- Akhir footer --}}
 @endsection
 </body>
 </html>

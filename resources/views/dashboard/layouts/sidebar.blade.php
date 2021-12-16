@@ -10,6 +10,12 @@
               Dashboard
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('cart') ? 'active' : '' }}" aria-current="page" href="/dashboard/cart">
+              <span data-feather="home"></span>
+              Keranjang
+            </a>
+          </li>
         </ul>
 
         @can('admin')
