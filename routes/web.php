@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardBarangController;
 use App\Http\Controllers\DashboardCategoryController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,6 @@ Route::resource('/dashboard/category', DashboardCategoryController::class)->midd
 
 // SHOW ROUTE
 Route::get('/detail/{barang:slug}', [BelanjaController::class, 'show']);
+
+// CART
+Route::resource('/dashboard/cart', CartController::class)->middleware('auth');

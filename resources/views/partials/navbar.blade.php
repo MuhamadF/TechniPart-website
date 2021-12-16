@@ -17,7 +17,10 @@
         <!-- Login -->
         <ul class="navbar-nav ms-auto">
         @auth
-            <li class="nav-item dropdown">
+        <li class="nav-item">
+        <a class="nav-link px-5" href="/dashboard/cart"><i class="bi bi-cart"></i> Keranjang</a>
+        </li>
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Halo, {{ auth()->user()->name }}
             </a>
@@ -30,7 +33,7 @@
                 </form>
                 </li>
             </ul>
-            </li>
+        </li>
 
         @else
             <li class="nav-item">
@@ -51,7 +54,7 @@
       <div class="navbar-collapse justify-content-md-center">
         <ul class="navbar-nav p-1">
           <li class="nav-item dropdown mt-2">
-            <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
+            <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-grid"></i> Kategori</a>
             <ul class="dropdown-menu">
             @foreach($category as $categories)
               <li><a class="dropdown-item" href="/?category={{$categories->slug}}">{{$categories->nama}}</a></li>

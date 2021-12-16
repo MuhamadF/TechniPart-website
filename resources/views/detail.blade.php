@@ -4,6 +4,16 @@
 @section('container')
     <div class="container-fluid">
         <div class="row mb-5 justify-content-center">
+        @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{session('success')}}
+            </div>
+        @endif
+        @if(session()->has('fail'))
+            <div class="alert alert-danger" role="alert">
+                {{session('fail')}}
+            </div>
+        @endif
             <div class="col-sm-4">
                 <img src="..." alt="..." width="320px" class="mt-4 mb-4">
             </div>
@@ -18,7 +28,7 @@
                     <p class="card-text fw-bold mb-1">Rincian</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                        <p class="card-text">Kategori :  <a href="" class="text-decoration-none">{{$barang->category->nama}}</a></p>
+                        <p class="card-text">Kategori :  <a href="/?category={{$barang->category->nama}}" class="text-decoration-none">{{$barang->category->nama}}</a></p>
                         </li>
                         <li class="list-group-item">
                             <p class="card-text">
@@ -27,9 +37,10 @@
                         <li class="list-group-item"><p class="card-text">Tersedia :  {{$barang->stok}} unit</p></li>
                     </ul>
                     <p class="card-text mt-3">{{$barang->desc}}</p>
-                    <form action="" class="d-flex">
-                    <button type="button" class="btn btn-outline-primary px-5 me-3">Beli Sekarang</button>
-                    <button type="button" class="btn btn-outline-primary px-5">Keranjang</button>
+                    <form action="/dashboard/cart" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="barang_id" value="{{$barang->id}}">
+                        <button type="submit" class="btn btn-outline-primary px-5">Masukan Keranjang</button>
                     </form>
                 </div>
                 </div>

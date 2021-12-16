@@ -48,6 +48,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // 1 USER PUNYA BANYAK ITEM KERANJANG
+    public function cart() {
+        return $this->hasMany(Cart::class);
+    }
 
 }
