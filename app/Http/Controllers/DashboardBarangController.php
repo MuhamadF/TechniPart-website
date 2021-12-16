@@ -27,7 +27,9 @@ class DashboardBarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.barang.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -38,21 +40,22 @@ class DashboardBarangController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = [
+        $validatedData = $request->validate([
             'nama_barang' => 'required|max:255',
             'category_id' => 'required',
+            'slug' => 'required|unique:barangs',
             'desc' => 'required',
             'harga' => 'required',
             'socket' => 'nullable',
             'ram_support' => 'nullable',
             'stok' => 'nullable'
-        ];
+        ]);
 
-        $validatedData['user_id'] = auth()->user()->id;
+         $validatedData['user_id'] = auth()->user()->id;
 
-        Barang::create($validatedData);
+         Barang::create($validatedData);
 
-        return redirect('/dashboard/barang')->with('success', 'Data barang berhasil diupdate!');
+         return redirect('/dashboard/barang')->with('success', 'Data barang berhasil diupdate!');
     }
 
     /**

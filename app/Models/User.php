@@ -48,9 +48,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // 1 USER (ADMIN) BISA PUNYA BANYAK POST
-    public function posts() {
-        
-        //return $this->hasMany();
-    }
+    // 1 USER PUNYA BANYAK ITEM KERANJANG
+
 }

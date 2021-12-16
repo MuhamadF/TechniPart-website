@@ -11,7 +11,7 @@
     @endif
 
     <div class="table-responsive">
-          <a href="/dashboard/barang/tambah" class="btn btn-primary mb-3"><i class="bi bi-bag-plus"></i> Tambah Barang</a>
+          <a href="/dashboard/barang/create" class="btn btn-primary mb-3"><i class="bi bi-bag-plus"></i> Tambah Barang</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>

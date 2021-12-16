@@ -22,8 +22,8 @@ class CreateBarangsTable extends Migration
             $table->string('image')->nullable();
             $table->string('desc');
             $table->string('harga');
-            $table->string('socket');
-            $table->string('ram_support');
+            $table->string('socket')->nullable();
+            $table->string('ram_support')->nullable();
             $table->integer('stok')->nullable();
             $table->timestamp('ditambahkan')->nullable();
             $table->timestamps();
