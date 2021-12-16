@@ -3,6 +3,7 @@
 @section('container')
 <div class="container-fluid">
     <div class="d-flex justify-content-center">
+    <a href="/dashboard/barang" class="btn btn-primary m-2"><i class="bi bi-backspace"></i> Kembali</a>
     <a href="/dashboard/barang/{{$barang->slug}}/edit" class="btn btn-warning m-2"><i class="bi bi-pencil"></i> Edit</a>
     <form action="/dashboard/barang/{{$barang->slug}}" method="post" class="d-inline">
         @method('delete')
@@ -35,7 +36,7 @@
                             </p></li>
                         <li class="list-group-item"><p class="card-text">Tersedia :  {{$barang->stok}} unit</p></li>
                     </ul>
-                    <p class="card-text mt-3">{{$barang->desc}}</p>
+                    <p class="card-text mt-3">{!! $barang->desc !!}</p>
                 </div>
                 </div>
             </div>

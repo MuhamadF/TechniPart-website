@@ -7,6 +7,7 @@ use App\Http\Controllers\BelanjaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardBarangController;
+use App\Http\Controllers\DashboardCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,13 +32,14 @@ Route::get('/register', [RegisterController::class, 'Index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 // LOGOUT ROUTE
-Route::post('/logout', [LoginController::class, 'Keluar']);
+Route::post('/logout', [LoginController::class, 'Keluar'])->middleware('auth');
 
 // DASHBOARD ROUTE
 Route::get('/dashboard', [DashboardController::class, 'Index'])->middleware('auth');
 
 // DASHBOARD ADMIN ROUTE
 Route::resource('/dashboard/barang', DashboardBarangController::class)->middleware('admin');
+Route::resource('/dashboard/category', DashboardCategoryController::class)->middleware('admin');
 
 // SHOW ROUTE
-Route::get('detail/{barang:slug}', [BelanjaController::class, 'show']);
+Route::get('/detail/{barang:slug}', [BelanjaController::class, 'show']);

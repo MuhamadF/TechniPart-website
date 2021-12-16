@@ -10,12 +10,6 @@
               Dashboard
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/profil">
-              <span data-feather="file-text"></span>
-              Profil
-            </a>
-          </li> -->
         </ul>
 
         @can('admin')
@@ -26,8 +20,10 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/barang*') ? 'active' : '' }}" href="/dashboard/barang">
-                  <span data-feather="grid"></span>
                   Data barang
+                </a>
+                <a class="nav-link {{ Request::is('dashboard/category*') ? 'active' : '' }}" href="/dashboard/category">
+                  Kategori
                 </a>
             </li>
         </ul>
