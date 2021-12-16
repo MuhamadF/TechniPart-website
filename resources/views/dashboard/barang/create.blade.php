@@ -60,6 +60,15 @@
                 </select>
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Gambar</label>
+                <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+                @error('image')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="desc" class="form-label @error('desc') is-invalid @enderror">Body</label>
                 @error('desc')
                 <div class="invalid-feedback">
