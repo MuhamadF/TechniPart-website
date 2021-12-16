@@ -128,9 +128,9 @@ class DashboardBarangController extends Controller
         //     Storage::delete($post->image);
         // }
 
-        Barang::destroy($barang->id);
+         Barang::destroy($barang->id);
 
-        return redirect('/dashboard/barang')->with('success', 'Barang Berhasil dihapus!');
+         return redirect('/dashboard/barang')->with('success', 'Barang Berhasil dihapus!');
     }
 
     public function checkSlug(Request $request) {
