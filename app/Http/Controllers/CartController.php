@@ -15,7 +15,10 @@ class CartController extends Controller
      */
     public function index()
     {
-        
+        return view('dashboard.keranjang.index', [
+            'cart' => Cart::where('user_id', auth()->user()->id)->get(),
+            'total' => Cart::where('user_id', auth()->user()->id)->sum('subtotal')
+        ]);
     }
 
     /**
@@ -44,7 +47,8 @@ class CartController extends Controller
         $produk = Barang::findOrFail($request->barang_id);
 
         //cek produk udah ada didalem keranjang
-        $checkkeranjang = Cart::where('barang_id', $request->barang_id)->first();
+        $checkkeranjang = Cart::where('user_id', auth()->user()->id)
+                                ->where('barang_id', $request->barang_id)->first();
 
         if($checkkeranjang) {
             return redirect('detail/' . $produk->slug)->with('fail', 'Dikarenakan Kelangkaan Komponen, maka pembeli tidak bisa membeli barang lebih dari 1 buah.');
@@ -102,6 +106,8 @@ class CartController extends Controller
      */
     public function destroy(Cart $cart)
     {
-        //
+            Cart::destroy($cart->id);
+
+            return redirect('/dashboard/cart')->with('success', 'Berhasil dihapus dari keranjang');
     }
 }
