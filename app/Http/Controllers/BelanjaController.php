@@ -22,7 +22,7 @@ class BelanjaController extends Controller
         return view('home', [
                 'title' => $title,
                 'active' => 'belanja',
-                'barang' => Barang::latest()->filter(request(['search', 'category']))->paginate(6),
+                'barang' => Barang::latest()->filter(request(['search', 'category']))->paginate(8),
                 'category' => Category::All()
         ]);
     }
