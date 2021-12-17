@@ -17,6 +17,8 @@
     {{-- font --}}
     <link rel="stylesheet" href="/font/fonts/css/all.min.css">
 
+    <title>{{$title}}</title>
+
     </head>
     <body>
     @yield('navbar')

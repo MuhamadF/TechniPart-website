@@ -10,7 +10,7 @@ class BelanjaController extends Controller
 {
     public function Index() {
 
-        $title = '';
+        $title = 'Technipart';
         if(request('category')) {
             $category = Category::firstWhere('slug', request('category'));
             $title = ' di kategori ' . $category->nama;
@@ -20,7 +20,7 @@ class BelanjaController extends Controller
             $title = ' di pencarian ' . request('search');
         }
         return view('home', [
-                'title' => 'Semua Produk' . $title,
+                'title' => $title,
                 'active' => 'belanja',
                 'barang' => Barang::latest()->filter(request(['search', 'category']))->get(),
                 'category' => Category::All()
@@ -30,6 +30,7 @@ class BelanjaController extends Controller
     public function show(Barang $barang) {
         return view('detail', [
             'nama_barang' => 'Barang',
+            'title' => $barang->nama_barang,
             'active' => 'Belanja',
             'barang' => $barang,
             'category' => Category::All()
