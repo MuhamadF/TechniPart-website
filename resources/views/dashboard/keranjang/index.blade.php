@@ -45,8 +45,34 @@
             <td></td>
             <td>@money($total)</td>
             <td></td>
-
           </tbody>
         </table>
-      </div>      
+        </div>    
+
+        <p>Alamat saat ini : {{auth()->user()->alamat}}</p>
+
+      <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Metode Pembayaran
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Online Payment</a></li>
+        <li><a class="dropdown-item" href="#">ATM</a></li>
+      </ul>
+    </div>
+
+    <div class="dropdown mt-4">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Pilih Kurir
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">JNE</a></li>
+        <li><a class="dropdown-item" href="#">Sicepat</a></li>
+        <li><a class="dropdown-item" href="#">GRAB</a></li>
+        <li><a class="dropdown-item" href="#">Gosend</a></li>
+      </ul>
+    </div>  
+
+    <a href="" class="btn btn-success mt-4">CHECKOUT</a>
+
 @endsection

@@ -14,8 +14,14 @@
                 {{session('fail')}}
             </div>
         @endif
-            <div class="col-sm-4">
-                <img src="..." alt="..." width="320px" class="mt-4 mb-4">
+        <div class="col-sm-4">
+                @if ($barang->image)
+                    <img src="{{ asset('storage/' . $barang->image) }}" alt="{{ $barang->category->name }}" width="320px" class="img-fluid mt-3">
+                @else
+                    <img src="..." alt="..." width="320px" class="mt-4 mb-4">
+                @endif
+                <div class="card-text text-center mb-2 mt-5">Scan halaman ini</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{url()->full()}}" alt="" class="d-block mx-auto">
             </div>
             <div class="col-md-5">
                 <div class="card border-white mb-3" style="max-width: 30rem;">
@@ -36,7 +42,7 @@
                             </p></li>
                         <li class="list-group-item"><p class="card-text">Tersedia :  {{$barang->stok}} unit</p></li>
                     </ul>
-                    <p class="card-text mt-3">{{$barang->desc}}</p>
+                    <p class="card-text mt-3">{!! $barang->desc !!}</p>
                     <form action="/dashboard/cart" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="barang_id" value="{{$barang->id}}">

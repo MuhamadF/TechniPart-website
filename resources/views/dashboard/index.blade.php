@@ -5,31 +5,31 @@
         <h1 class="h2">Halo, {{ auth()->user()->name }}</h1>
       </div>
 
-      <h3 class="mb-5">Rincian profil</h3>
-      <img src="" alt="asd" width="30px" class="mb-5">
-      <div class="table-responsive">
-      <table class="table table-borderless">
-        <tr>
-          <td class="w-25">Username</td>
-          <td>:</td>
-          <td>{{auth()->user()->username}}</td>
-        </tr>
-        <tr>
-          <td>Nama</td>
-          <td>:</td>
-          <td>{{auth()->user()->name}}</td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>:</td>
-          <td>{{auth()->user()->email}}</td>
-        </tr>
-        <tr>
-          <td>Alamat</td>
-          <td>:</td>
-          <td>{{auth()->user()->alamat}}</td>
-        </tr>
-      </table>
+    @if(session()->has('success'))
+      <div class="alert alert-success col-lg-8" role="alert">
+        {{session('success')}}
       </div>
+    @endif
+
+    <table class="table table-striped">
+      <tr>
+        <td>Username</td>
+        <td>{{auth()->user()->username}}</td>
+      </tr>
+      <tr>
+        <td>Nama</td>
+        <td>{{auth()->user()->name}}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{auth()->user()->email}}</td>
+      </tr>
+      <tr>
+        <td>Alamat</td>
+        <td>{{auth()->user()->alamat}}</td>
+      </tr>
+    </table>
+
+    <a href="/dashboard/{{$user->id}}/edit" class="btn btn-primary">Update Alamat</a>
 
 @endsection
