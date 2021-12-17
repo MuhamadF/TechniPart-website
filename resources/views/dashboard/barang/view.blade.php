@@ -16,7 +16,7 @@
         <div class="row mb-5 justify-content-center">
             <div class="col-sm-4">
                 @if ($barang->image)
-                    <img src="{{ asset('storage/' . $barang->image) }}" alt="{{ $barang->category->name }}" class="img-fluid mt-3">
+                    <img src="{{ asset('storage/' . $barang->image) }}" alt="{{ $barang->category->name }}" width="320px class="img-fluid mt-3">
                 @else
                     <img src="..." alt="..." width="320px" class="mt-4 mb-4">
                 @endif

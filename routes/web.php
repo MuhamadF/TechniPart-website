@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardBarangController;
 use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,6 @@ Route::get('/detail/{barang:slug}', [BelanjaController::class, 'show']);
 
 // CART
 Route::resource('/dashboard/cart', CartController::class)->middleware('auth');
+
+// USER ROUTE
+Route::resource('/dashboard', UserController::class)->middleware('auth');

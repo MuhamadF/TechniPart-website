@@ -9,9 +9,6 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Halaman Utama</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">Tentang kami</a>
-        </li>
       </ul>
 
         <!-- Login -->
@@ -50,7 +47,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <p class="text-white mx-2 mt-3">TechniPART</p>
+      <a href="/" class="text-decoration-none"><p class="text-white fs-5 fw-bold mx-2 mt-3">TECHNI <span class="text-primary fs-6">PART</span></p></a>
       <div class="navbar-collapse justify-content-md-center">
         <ul class="navbar-nav p-1">
           <li class="nav-item dropdown mt-2">

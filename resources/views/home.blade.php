@@ -4,21 +4,20 @@
 @section('container')
         <div class="container">
         {{-- Slideshow --}}
-        <div id="carouselExampleCaptions" class="carousel slide mb-2" data-bs-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade mb-2" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/slide/slide1.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-              </div>
+              <img src="img/slide/slide1.png" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
+                <p class="carousel-caption fw-6 m-1">Photo by <a href="https://unsplash.com/@rapol?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" class="text-white text-decoration-none">Rafael Pol</a> on <a href="https://unsplash.com/s/photos/computer-hardware?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" class="text-white text-decoration-none">Unsplash</a>
+  </p>
+
             </div>
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
               <img src="img/slide/slide2.jpg" class="d-block w-100" style="object-fit: cover; object-position: center; height:60vh" alt="">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
@@ -31,7 +30,7 @@
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
               </div>
-            </div>
+            </div> -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,7 +67,7 @@
           @endforeach
           </div>
           @else
-          <p class="text-center fs-3">GAK NEMU BARANGNYA NIH</p>
+          <p class="text-center fs-3">Barang tidak ditemukan</p>
           @endif
         </div>
       </div> 
@@ -77,18 +76,9 @@
 
 <footer class="footer mt-5">
   <div class="ft">
-      <div class="row">
-          <div class="footer-col">
-               <h4>company</h4>
-               <ul>
-                  <li><a href="...">about us</a></li>
-                  <li><a href="...">our services</a></li>
-                  <li><a href="...">privacy policy</a></li>
-                  <li><a href="...">affiliate program</a></li>
-               </ul>
-          </div>
+      <div class="row justify-content-center">
               <div class="footer-col">
-                <h4>our team</h4>
+                <h4>Team</h4>
                 <ul>
                   <li><a href="...">Muhamad Fawwazt S</a></li>
                   <li><a href="...">Rizky Angga Saputra</a></li>
@@ -106,7 +96,7 @@
                   </ul>
               </div>
               <div class="footer-col">
-                <h4>follow us</h4>
+                <h4>Ikuti kami</h4>
                   <div class="social-links">
                     <a href="..."><i class="fab fa-facebook-f"></i></a><br>
                     <a href="..."><i class="fab fa-twitter"></i></a><br>
