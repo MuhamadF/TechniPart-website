@@ -74,6 +74,10 @@
     </div>
 </div>
 
+<div class="d-flex">
+{{$barang->links()}}
+</div>
+
 <footer class="footer mt-5">
   <div class="ft">
       <div class="row justify-content-center">
